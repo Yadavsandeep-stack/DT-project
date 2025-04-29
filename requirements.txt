@@ -36,7 +36,6 @@ distlib==0.3.9
 executing==2.1.0
 fastjsonschema==2.20.0
 filelock==3.18.0
-Flask==3.1.0
 flexcache==0.3
 flexparser==0.4
 fqdn==1.5.1
