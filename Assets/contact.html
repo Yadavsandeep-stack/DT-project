@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Page</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+        <h1>
+            Studyselector
+        </h1>
+        <header>
+    <header>
+      <h2>Support</h2>
+      <nav>
+        <button class="active">Help Centre</button>
+        <button>My Issues</button>
+        <button>Notice Board</button>
+      </nav>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Type your query here..." />
+    </div>
+
+    <section class="faq-section">
+      <h3>Tell us how we can help <span class="wave">👋</span></h3>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">How to ask your doubt</button>
+        <p class="hidden">Follow the steps on our website </p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">How to join live class?</button>
+        <p class="hidden">Go to the dashboard and click on “Join Live Class”.</p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">Why to enroll in our website</button>
+        <p class="hidden">Studyselector provide advanced content and top college educators.</p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">When To Pay Money?</button>
+        <p class="hidden">You Can First Watch Demo Session of Educator and then contact Them</p>
+      </div>
+      <div class="faq-item">
+        <button onclick="toggleFAQ(this)">Can we Ask Doubt Through Video Call?</button>
+        <p class="hidden">Yes,You Can contact throught video call also  </p>
+      </div>
+      
+    </section>
+
+    <section class="contact-box">
+      <h4>Still need help, Have Queries</h4>
+      <p>Have Queries? Please get in touch & we will happy to help you</p>
+      <button class="contact-button">Contact Us</button>
+    </section>
+  </div>
+
+  <script>
+    function toggleFAQ(button) {
+      const p = button.nextElementSibling;
+      p.classList.toggle("hidden");
+    }
+  </script>
+  <script>
+    document.querySelector(".btnLogin-popup").addEventListener("click", function() {
+    window.location.href = "Login.html";
+    });
+</script>
+</body>
+</html>
