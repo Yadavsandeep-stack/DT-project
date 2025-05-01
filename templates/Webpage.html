@@ -1,32 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage
-    </title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}"></head>
+  <meta charset="UTF-8">
+  <title>Study Selector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- External CSS (if using Flask) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style1.css') }}">
+  <!-- Inline CSS from Study Selector (optional, if not using external) -->
+  <style>
+    /* Place all your Study Selector CSS here if not using external file */
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    /* ...rest of your CSS... */
+  </style>
+</head>
 <body>
-    <header>
-        <h5 class = "logo">
-            <img src="{{ url_for('static', filename='images/logo3.png') }}" alt="logo" /></h5>
-    <nav class = "navigation">
-        <a href="{{ url_for('homepage') }}">Home</a>
-        <a href="{{ url_for('about') }}">About</a>
-        <a href="{{ url_for('study_form') }}">Study</a>
-        <a href="{{ url_for('contact') }}">Contact</a>  
-        <!-- <button class="btnLogin-popup">Login -->
-        <!-- </button> -->
+  <!-- Header and Navigation from Second Page -->
+  <header>
+    <h5 class="logo">
+      <img src="{{ url_for('static', filename='images/logo3.png') }}" alt="logo" />
+    </h5>
+    <nav class="navigation">
+      <a href="{{ url_for('homepage') }}">Home</a>
+      <a href="{{ url_for('about') }}">About</a>
+      <a href="{{ url_for('study_form') }}">Study</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
     </nav>
-    </header>
-    
+  </header>
 
+  <!-- Main Content from Study Selector -->
+  <div class="header">
+    <div class="logo">study selector</div>
+    <input class="search-bar" type="text" placeholder="search subject, branch and educators" />
+  </div>
 
-    <!-- <script>
-        document.querySelector(".btnLogin-popup").addEventListener("click", function() {
-        window.location.href = "Login.html";
-        });
-    </script> -->
+  <div class="features-row">
+    <div class="feature-card feature-quiz">
+      <span>💡</span>
+      quiz
+    </div>
+    <div class="feature-card feature-notes">
+      <span>📖</span>
+      notes
+    </div>
+    <div class="feature-card feature-tests">
+      <span>🅰️+</span>
+      tests
+    </div>
+    <div class="feature-card feature-1to1">
+      <span>🐰</span>
+      one to one class
+    </div>
+  </div>
+
+  <div class="explore-title">Explore educators</div>
+  <div class="educator-row">
+    <div class="educator-card">
+      <div class="educator-title">Mechanical</div>
+      <div class="educator-list">
+        &gt; thermodynamics<br>
+        &gt; applied mechanics<br>
+        &gt; dynamics
+      </div>
+      <div class="educator-avatar">👩‍🏫</div>
+      <button class="educator-name">Neha Jain</button>
+    </div>
+    <div class="educator-card empty"></div>
+    <div class="educator-card empty"></div>
+  </div>
+
+  <!-- Modal for feature coming soon -->
+  <div class="modal" id="featureModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div>This feature will be available soon.</div>
+    </div>
+  </div>
+
+  <!-- JavaScript from Study Selector -->
+  <script>
+    // Feature modal logic
+    const featureCards = document.querySelectorAll('.feature-card');
+    const modal = document.getElementById('featureModal');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    featureCards.forEach(card => {
+      card.addEventListener('click', () => {
+        modal.style.display = 'flex';
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
 </body>
-
 </html>
