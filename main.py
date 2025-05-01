@@ -7,10 +7,11 @@ app.secret_key = "supersecretkey"  # Needed for session
 
 # DB Connection
 db = mysql.connector.connect(
-    host="localhost",
+    host="turntable.proxy.rlwy.net",
     user="root",
-    password="Sa@20061129",
-    database="temp3"
+    password="MQAHyCYtmYFbGcPoJaiXeVfXZzIquNKz",
+    database="railway",
+    port="58294"
 )
 
 @app.route('/')
