@@ -1,158 +1,174 @@
-body{
+body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f7fa;
-    display: block;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
-    
 }
-.container-fluid{
+
+/* Banner/Header */
+.container-fluid {
     background-color: #337fbd;
     width: 100%;
-    padding: 20px 0;
+    padding: 24px 0 16px 0;
+    border-top: 10px solid #f5c518;
+    border-bottom: 10px solid #f5c518;
+    text-align: center;
+    border-radius: 2px;
 }
+.container-fluid img {
+    max-height: 90px;
+    margin-bottom: 8px;
+}
+.container-fluid .header-title {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 0;
+    line-height: 1.3;
+}
+.container-fluid .header-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-top: 2px;
+    margin-bottom: 0;
+}
+
+/* Registration Form Container */
 .login-container {
-    background-color: #d0eaff; /* Soft blue */
+    background-color: #d0eaff;
     padding: 40px 60px;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     width: 100%;
-    max-width: 600px;
-    margin-bottom: 5px;
-    display: block;
-    align-content: center;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-}
-.login-container .Register{
-    justify-content: center;
+    max-width: 480px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-bottom: 10px;
-    display: block;
-    align-content:center;
-}
-.login-container .Register:hover{
-    color: #ef59a4;
-    /* padding-bottom: 10px; */
-
-}
-.login-container .forgot{
-    justify-content: right;
-    text-align:right;
-
-    right: 0;
-    padding-right: 10px;
-    /* color:#ef59a4 */
 }
 
 /* Headline */
-h1 {
+.login-container h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
     color: #294585;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 /* Form structure */
 .form-group {
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 18px;
 }
 
 label {
     display: block;
-    font-size: 17px;
+    font-size: 1rem;
     margin-bottom: 6px;
     color: #333;
+    font-weight: 500;
 }
 
 input[type="text"],
-
-input[type="password"] {
+input[type="password"],
+input[type="email"],
+select {
     width: 100%;
-    padding: 14px;
+    padding: 13px;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 15px;
+    font-size: 1rem;
+    margin-bottom: 6px;
+    background: #f8fbff;
     transition: border-color 0.3s;
-    margin-bottom: 10px;
-}
-input[type="email"]{
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    transition: border-color 0.3s;
-    margin-bottom: 10px;
-
-}
-input[type="year"]{
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    transition: border-color 0.3s;
-    margin-bottom: 10px;
-
-}
-input[type="subjects"]{
-    width: 100%;
-    padding: 14px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 15px;
-    transition: border-color 0.3s;
-    margin-bottom: 10px;
-
-}
-input[type="email"]:focus{
-    border-color: #5075d2;
-    outline: none;
-}
-input[type="subjects"]:focus{
-    border-color: #5075d2;
-    outline: none;
-}
-input[type="year"]:focus{
-    border-color: #5075d2;
-    outline: none;
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
-
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
     border-color: #5075d2;
     outline: none;
 }
 
 /* Button Styling */
-button {
-    width: 105.5%;
-    padding: 15px;
+button, .register-btn {
+    width: 100%;
+    padding: 14px;
     background-color: #5075d2;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #b0c4de33;
 }
 
-button:hover {
+button:hover, .register-btn:hover {
     background-color: #294585;
+    box-shadow: 0 4px 12px #b0c4de55;
 }
 
-/* Image Styling */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 20px;
+/* Login link */
+.login-link {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
 }
-/* .input
-    margin-bottom: 20px;
-} */
+.login-link a {
+    color: #294585;
+    text-decoration: underline;
+    margin-left: 4px;
+    transition: color 0.2s;
+}
+.login-link a:hover {
+    color: #ef59a4;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .login-container {
+        padding: 28px 12px;
+        max-width: 98vw;
+    }
+    .container-fluid {
+        padding: 14px 0 8px 0;
+    }
+    .container-fluid img {
+        max-height: 60px;
+    }
+    .container-fluid .header-title {
+        font-size: 1.1rem;
+    }
+    .container-fluid .header-subtitle {
+        font-size: 0.95rem;
+    }
+    .login-container h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .login-container {
+        padding: 12px 2vw;
+        max-width: 99vw;
+    }
+    .login-container h1 {
+        font-size: 1.05rem;
+    }
+    label, .login-link {
+        font-size: 0.95rem;
+    }
+    button, .register-btn {
+        font-size: 0.95rem;
+        padding: 11px;
+    }
+}
