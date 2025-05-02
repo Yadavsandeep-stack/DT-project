@@ -62,5 +62,30 @@
     <div class="educator-card empty"></div>
     <div class="educator-card empty"></div>
   </div>
+  <!-- Popup Overlay -->
+<div id="feature-popup-overlay" class="popup-overlay">
+  <div class="popup-box">
+    <span class="close-btn" id="close-popup">&times;</span>
+    <p>This feature will be available soon.</p>
+  </div>
+</div>
+<script>
+  // Select all feature spans/cards you want to trigger the popup
+  document.querySelectorAll('.feature-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      document.getElementById('feature-popup-overlay').classList.add('active');
+    });
+  });
+
+  // Close popup when clicking the close button or outside the popup box
+  document.getElementById('close-popup').onclick = function() {
+    document.getElementById('feature-popup-overlay').classList.remove('active');
+  };
+  document.getElementById('feature-popup-overlay').onclick = function(e) {
+    if (e.target === this) this.classList.remove('active');
+  };
+</script>
+
 </body>
 </html>
+
