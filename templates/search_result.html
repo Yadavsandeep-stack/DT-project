@@ -7,25 +7,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style8.css') }}">
 </head>
 <body
-    <div class="container">
-        <h2>Users studying "{{ subject }}" in "{{ year }}"</h2>
-    
-        {% if results %}
-            <ul>
-                {% for user in results %}
-                    <li>{{ user.username }} ({{ user.email }})</li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <p>No users found for this subject and year.</p>
-        {% endif %}
-
-        
-    </div>
-    <footer>
-        <a href="{{ url_for('study_form') }}">← Back to Search</a>
-
-    </footer>    
-    
+<div class="container">
+    <h2>
+      Tutors in {{ year }}th year eligible for teaching "{{ subject }}"
+    </h2>
+    {% if results %}
+    <ul class="user-list">
+        {% for user in results %}
+          <li>
+            <a class="user-card" href="{{url_for('chat')}}" title="Chat with {{ user.username }}">
+              <span class="user-avatar">{{ user.username[0]|upper }}</span>
+              <span class="user-details">
+                <span class="username">{{ user.username }}</span>
+                <span class="email">{{ user.email }}</span>
+              </span>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+      
+    {% else %}
+      <div class="no-users">
+        No users found for this subject and year.
+      </div>
+    {% endif %}
+  </div>
+  <footer>
+    &copy; 2025 Your Site Name. All rights reserved.
+  </footer>
+  
 </body>
 </html>
