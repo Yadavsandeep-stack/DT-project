@@ -1,84 +1,116 @@
 body {
-    background-color: aliceblue; /* Light gray for a clean background */
+    min-height: 100vh;
+    margin: 0;
+    background: #eaf6fc;
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100vh; /* Ensure the body takes the full viewport height */
-    margin: 0; /* Remove default margin */
+    justify-content: center;
 }
 
-.container {
-    width: 50%; /* Set a fixed width */
-    height: auto; /* Adjust height based on content */
-    margin: auto; /* Center the container horizontally and vertically */
-    background-color: #b2edf4; /* White background for the container */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333; /* Dark gray text for readability */
-    font-size: 16px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid #e0e0e0; /* Light gray border */
-}
-
-.container:hover {
-    background-color: #f1f1f1; /* Slightly darker gray on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-    transform: scale(1.05); /* Slight zoom effect */
-}
-
-.box {
-    width: 96%; /* Adjust width to fit the container */
-    height: auto; /* Adjust height based on content */
-    background-color: #6ba9eb; /* Blue background for the box */
-    border-radius: 10px;
-    padding: 20px;
+/* Card-style container */
+.form-card {
+    background: #6ec1e4;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 6px #b2e7f7;
+    padding: 32px 38px 24px 38px;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    color: white; /* White text for contrast */
-    font-size: 24px;
-    margin-bottom: 1px;
+    min-width: 340px;
+    max-width: 98vw;
+    transition: box-shadow 0.2s;
+    position: relative;
 }
 
-.form-layout label {
-    font-size: 16px;
-    color: #333; /* Dark gray for labels */
-    margin-bottom: 5px;
-    display: block; /* Ensure labels are on top of inputs */
+/* Sub-card for the form itself */
+.form-inner {
+    background: #4a90e2;
+    border-radius: 14px;
+    padding: 22px 28px 18px 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
 }
 
-.search-bar {
-    width:90%;
-    padding: 10px;
-    margin-bottom: 15px; /* Add spacing between inputs */
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 4px;
-    background-color: #f9f9f9; /* Light background for inputs */
-    color: #333; /* Dark gray text */
-    font-size:15px;
+.form-inner label {
+    color: #fff;
+    font-weight: 500;
+    margin-right: 6px;
+    font-size: 1.08rem;
 }
 
-.search-bar:focus {
-    outline: none;
-    border-color: #007BFF; /* Blue border on focus */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Subtle glow on focus */
-}
-
-.search-button {
-    padding: 10px 20px;
-    background-color: #28a745; /* Green background for the button */
-    color: white; /* White text for contrast */
+.form-inner input,
+.form-inner select {
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 7px 10px;
+    font-size: 1rem;
+    margin-right: 6px;
+    outline: none;
+    min-width: 110px;
+    background: #eaf6fc;
+    color: #222;
+    transition: box-shadow 0.2s, border 0.2s;
+    box-shadow: 0 0 0 1.5px #b2e7f7;
 }
 
-.search-button:hover {
-    background-color: #218838; /* Darker green on hover */
+.form-inner input:focus,
+.form-inner select:focus {
+    box-shadow: 0 0 0 2.5px #fff176;
+    background: #fff;
+}
+
+.form-inner button {
+    background: #fff176;
+    color: #294585;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s, box-shadow 0.2s;
+    box-shadow: 0 1px 5px #eaf6fc;
+    margin-top: 8px;
+}
+
+.form-inner button:hover {
+    background: #ffe066;
+    color: #222;
+    box-shadow: 0 2px 10px #b2e7f7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .form-card {
+        min-width: unset;
+        padding: 12px 2vw 10px 2vw;
+    }
+    .form-inner {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 8px 10px 8px;
+        gap: 10px;
+    }
+    .form-inner label {
+        margin-right: 0;
+        margin-bottom: 2px;
+        font-size: 1rem;
+    }
+    .form-inner input,
+    .form-inner select {
+        margin-right: 0;
+        min-width: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .form-inner button {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1.05rem;
+        margin-top: 10px;
+    }
 }
