@@ -7,29 +7,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style7.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="box">
-            <form action="{{ url_for('search_results') }}" method="get">
-                <label for="subject">Subject:</label>
-                <input list="subject-list" name="subject" id="subject" required>
-                <datalist id="subject-list">
-                    {% for subject in subjects %}
-                        <option value="{{ subject }}">
-                    {% endfor %}
-                </datalist>
-            
-                <label for="year">Year:</label>
-                <input list="year-list" name="year" id="year" required>
-                <datalist id="year-list">
-                    {% for year in years %}
-                        <option value="{{ year }}">
-                    {% endfor %}
-                </datalist>
-            
-                <button type="submit">Search</button>
-            </form>
-            
-        </div>
+    <div class="form-card">
+        <form action="{{ url_for('search_results') }}" method="get" class="form-inner">
+            <label for="subject">Subject:</label>
+            <input list="subject-list" name="subject" id="subject" required>
+            <datalist id="subject-list">
+                {% for subject in subjects %}
+                    <option value="{{ subject }}">
+                {% endfor %}
+            </datalist>
+      
+            <label for="year">Year:</label>
+            <input list="year-list" name="year" id="year" required>
+            <datalist id="year-list">
+                {% for year in years %}
+                <option value="{{ year }}">
+                {% endfor %}
+            </datalist>
+      
+            <button type="submit">Search</button>
+        </form>
     </div>
-</body>
+  </body>
+  
 </html>
